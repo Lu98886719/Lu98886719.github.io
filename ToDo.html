@@ -1,0 +1,205 @@
+<!doctype html>
+<html>
+<head>
+    <title>About.html</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        *{
+        margin: 0;
+        padding:0;
+        font-family:century sans-serif;
+        box-sizing: border-box;
+        }
+        header{
+            background: #481f3f;
+            height:300vh;
+            background-size: cover;
+            background-position: center;
+        }
+        ul{
+            float:right;
+            list-style: none;
+            margin-top:25px;
+        }
+       ul li{
+           display:inline-block;
+       }
+       ul li a{
+           text-decoration: none;
+           padding:5px 20px;
+           border:1px solid #fff;
+           transition:0.6s ease;
+       }
+       ul li a:hover{
+        background-color:#fff;
+        color:#000;
+    }
+    ul li .active a{
+        background-color:#fff;
+        color:#000;
+    }
+    /* Todo list style*/
+.Headah{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background: #481f3f;
+}
+
+ #container
+{
+    height: 550px;
+    width: 340px;
+    background: #edf1f5;
+    border-radius: 30px;
+    position: relative;
+    border: 10px solid #fff;
+}
+#title{
+    height: 70px;
+    width: 100%;
+    background:  #481f3f;
+    color: #fff;
+    display: grid;
+    place-items: center;
+    border-radius: 30px 30px 0 0;
+}
+#task{
+    position: absolute;
+    top: 90px;
+    left: 20px;
+    height: 40px;
+    width: calc(100% - 40px);
+    border: none;
+    border-bottom: 1px solid #1f3148;
+    outline: none;
+    background: transparent;
+    padding: 0 10px;
+    color: #1f3148;
+    font-weight: bold;
+    font-size: 17px;
+    
+}
+#task::placeholder{
+    color: #1f3448;
+    
+}
+#list{
+    position: absolute;
+    top: 145px;
+    left: 10px;
+    list-style: none;
+    height: 300px;
+    width: calc(100% - 20px);
+    overflow: auto;
+}
+#list li{
+    height: 50px;
+    width: 100%;
+    margin: 5px  0;
+    position: relative;
+    left: 0;
+    border: 1px solid #1f3148;
+    overflow: hidden;
+}
+#list li h4{
+   height: 50px;
+   width: 320px;
+   padding: 0 10px;
+   display: flex;
+   align-items: center;
+   color: #1f3148;
+   overflow: hidden;
+   position: absolute;
+   left: 0;
+   top: 0;
+}
+#list li .deleteTask{
+    height: 50px;
+    width: 50px;
+    display: grid;
+    place-items: center;
+    position: absolute;
+    right: -50px;
+    background: #1f3148;
+    color: #e2e2e2;
+    transition: 0.5s;
+    cursor: pointer;
+    z-index: 999;
+}
+#list li:hover .deleteTask{
+    right: 0;
+}
+#addTask{
+    height: 50px;
+    width: calc(100% - 40px);
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    background: #1f3448;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#addTask:hover{
+    box-shadow: 3px 3px 10px #000000;
+}
+.Headah .p{
+    font-size: 30px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="main">
+            <ul>
+                <li><a href="index.html" a href="#"style="color:red">Нүүр хуудас</a></li>
+                <li><a href="LifeStyle.html" style="color:greenyellow">Чөлөөт</a></li>
+                <li><a href="Gallery.html" style="color:chocolate">Зураг</a></li>
+                <li><a href="ToDo.html" style="color:cyan">Түдүү</a></li>
+                <li><a href="Piano.html" style="color:rgb(89, 0, 255)">Хөгжим</a></li>
+                <li><a href="Contact.html" style="color:darkorange">Холбоо барих</a></li>
+            </ul>
+        </div>
+        <div class="Headah">
+        <div id="container">
+            <h2 id="title">To_Do _List</h2>
+            <input type="text" placeholder="Enter your task" id="task">
+            <ul id="list">
+                <!--<li>
+                    <i class="fas fa-times text-2xl deleteTask"></i>
+                    <h4>Your list</h4>
+                </li>-->
+            </ul>
+            <button id="addTask">Add Your Task</button>
+        </div>
+        </div>
+        <p>Өөрт байгаа цагаа ухаалгаар удирдаж сурах</p>
+    </header>
+    <script>
+        let task = document.querySelector("#task");
+let list = document.querySelector("#list");
+let addTask = document.querySelector("#addTask");
+
+addTask.addEventListener("click", ()=>{
+   list.insertAdjacentHTML(`afterbegin` , `<li>
+   <i class="fas fa-times text-2xl deleteTask"></i>
+   <h4>${task.value}</h4>
+</li>`);
+    task.value = "";
+
+    //delete todo
+    let deleteTask = document.querySelectorAll(".deleteTask");
+    deleteTask.forEach(del =>{
+        del.addEventListener("click" , ()=>{
+            del.parentElement.remove();
+        })
+    })
+})
+    </script>
+    </body>
+</html>

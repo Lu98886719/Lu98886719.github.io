@@ -1,0 +1,345 @@
+<!doctype html>
+<html>
+<head>
+    <title>Services.html</title>
+    <meta charset="utf-8">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+         @import url('https://fonts.googleapis.com/css?family=Allura|josefin+Sans');
+     *{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:century;
+    }
+        header{
+        background:sandybrown;
+        height: 170vh;
+        background-size: cover;
+        background-position: center;
+    }
+    ul{
+        float:right;
+        list-style: none;
+        margin-top: 25px;
+        padding:0 30px;
+    }
+    ul li{
+        display:inline-block;
+    }
+    ul li a{
+        text-decoration: none;
+        color:black;
+        padding:5px 20px;
+        border:1px solid #fff;
+        transition: 0.6s ease;
+    }
+   ul li.active a{
+       background-color: #fff;
+       color:#aaa;
+   }
+   *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#btn{
+    background-color: white;
+    border:  1px solid rgb(0, 0, 162);
+    border-radius: 4px;
+    color: rgb(0, 0, 162);
+    cursor: pointer;
+    transition: .3s;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+}
+#btn:hover{
+    background-color: rgb(0, 0, 162);
+    color: white;
+}
+
+.modalContainer{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    z-index: -3;
+    transition: 0.3s;
+}
+.modalContainer .modal{
+    width: 70%;
+    
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: .7s;
+    transform: translateY(-75px);
+}
+.modalContainer .modal__header{
+    width: 100%;
+    padding: 2rem;
+    border-bottom: 1px solid #ccc;   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;                        
+}
+.modalContainer .modal__footer{
+    width: 100%;
+    padding: 1.5rem 2rem;
+    border-top: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    
+}
+.modalContainer .modal__footer .btn{
+    padding: .75rem 1.5rem;
+    margin-left: 1rem;
+    background-color: white;
+    color: rgb(0, 0, 162);
+    border-radius: 4px;
+    border: 1px solid rgb(0, 0, 162);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.modalContainer .modal__footer .btn:last-child{
+    background-color: rgb(0, 0, 162);
+    color: white;
+    cursor: pointer;
+}
+.modalContainer .modal__footer .btn:first-child:hover{
+    background-color: rgb(0, 162, 255);
+    color: white;
+}
+.modalContainer .modal__footer .btn:last-child:hover{
+    background-color: white;
+    color: rgb(0, 162, 255);
+}
+.modalContainer .modal__body {
+    width: 100%;
+    height: 500px;
+   padding: 2rem;
+  color:rgb(58, 58, 58);
+  font-size: 2rem;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.open{
+    opacity: 1 !important;
+    z-index: 1 !important;
+}
+.openModal{
+    transform: translateY(0) !important;
+}
+
+.section{
+    width: 100%;
+    height: 100vh;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 250px);
+    gap: 1rem;
+}
+
+.section .box{
+    background-color: rgb(235, 235,235);
+    border-radius: 10px;
+    cursor: pointer;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    padding: 1.5rem;
+    justify-content: flex-end;
+    align-items: flex-start;
+    overflow: hidden;
+}
+.section .box .delete{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: orange;
+    color: white;
+    border: 1px solid #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transform: translateX(200%);
+    transition: .4s;
+}
+.section .box:hover .delete {
+    transform: translateX(0);
+}
+  
+    </style>
+</head>
+ <body>
+   <header>
+           <ul>
+            <li><a href="index.html" a href="#"style="color:red">Нүүр хуудас</a></li>
+            <li><a href="LifeStyle.html" style="color:greenyellow">Чөлөөт</a></li>
+            <li><a href="Gallery.html" style="color:chocolate">Зураг</a></li>
+            <li><a href="ToDo.html" style="color:cyan">Түдүү</a></li>
+            <li><a href="Piano.html" style="color:rgb(89, 0, 255)">Хөгжим</a></li>
+            <li><a href="Contact.html" style="color:darkorange">Холбоо барих</a></li>
+           </ul>
+            </div>
+
+            <div class="modalContainer">
+                <div class="modal">
+                    <div class="modal__header">
+                        <h1 class="text-3xl">Modal Title</h1>
+                        <h2 id="close">
+                            <i class="fas fa-times text-4xl"></i>
+                        </h2>
+                    </div>
+                    <div class="modal__body">
+                       
+                    </div>
+                    <div class="modal__footer">
+                        <button class="btn btn__cancel" >Close</button>
+                        <button class="btn">Okay</button>
+                    </div>
+                </div>
+            </div>
+        
+            <!--<button id="btn">open Modal</button> -->
+            <div class="section">
+        
+                <div class="box hover:shadow-xl transition duration-300" style="background-image: url(https://tvline.com/wp-content/uploads/2020/05/stranger-things.jpg?w=620);">
+                    <div class="delete">
+                        <i class="fas fa-times"></i>
+                    </div>
+                    
+                </div>
+            <div class="box hover:shadow-xl transition duration-300" style="background-image: url(https://images.indianexpress.com/2019/02/netflix-sex-education-759.jpg);">
+                <div class="delete">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="box hover:shadow-xl transition duration-300" style="background-image: url(https://www.techradar247.com/wp-content/uploads/2020/05/elite.jpg);">
+                <div class="delete">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="box hover:shadow-xl transition duration-300" style="background-image: url(https://pbs.twimg.com/media/ENp7lbHVUAESN8v.jpg);">
+                <div class="delete">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="box hover:shadow-xl transition duration-300" style="background-image: url(https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Ff5df874e-28c1-11e6-9765-3be860cf2881.jpg?crop=2070%2C1164%2C97%2C65&resize=1180);">
+                <div class="delete">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="box hover:shadow-xl transition duration-300" style="background-image: url(http://prod-upp-image-read.ft.com/f2260d32-2e96-11e6-a18d-a96ab29e3c95);">
+                <div class="delete">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="box hover:shadow-xl transition duration-300" style="background-image: url(https://www.catholicnews.com/wp-content/uploads/2020/10/20160602T1140-3765-CNS-MOVIE-REVIEW-ME-YOU.jpg);">
+                <div class="delete">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="box hover:shadow-xl transition duration-300" style="background-image: url(https://www.sheknows.com/wp-content/uploads/2018/08/xogtmlybcpjsjemi5t97.jpeg?w=1920);">
+                <div class="delete">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="box hover:shadow-xl transition duration-300" style="background-image: url(https://chingutotheworld.com/wp-content/uploads/2019/09/69712805_404027986949344_3711362385290723328_n.jpg);">
+                <div class="delete">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="box hover:shadow-xl transition duration-300" style="background-image: url(https://vfan-phinf.pstatic.net/20190331_9/1553996244130vrw2w_JPEG/img_233178_1.jpg?type=e1920);">
+                <div class="delete">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="box hover:shadow-xl transition duration-300" style="background-image: url(https://1739752386.rsc.cdn77.org/data/images/full/239296/kim-woo-bin-looks-dashing-in-the-december-issue-of-vogue-korea.jpg);">
+                <div class="delete">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="box hover:shadow-xl transition duration-300" style="background-image: url(https://yaay.today/__export/1609712947127/sites/yaay/img/2021/01/03/faffd17b6675cf436658046a85ed3e05.jpg_1027330181.jpg);">
+                <div class="delete">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            </div>
+            <div class="absolute right-4 bottom-4 flex">
+                <input class="Input" type="text" placeholder="URL">
+                <addclass="button" type="button" value="Add PPicture">
+                <button>Add Picture</button>
+            </div>
+    </header>
+    
+    <script>
+         const button = document.querySelector('#btn');
+const modalContainer = document.querySelector('.modalContainer');
+const close = document.querySelector('#close');
+const btnCancel = document.querySelector('.btn__cancel');
+const boxes = document.querySelectorAll('.box');    //Ehleed import hiiij avaad
+const myInput = document.querySelector('.Input');
+const myBtn = document.querySelector('#button')
+
+boxes.forEach(function(box, index){ //daraa ni foreach davtalt yvulad
+  box.addEventListener('click', function(e){  // element bur der darah ued buyu click event uusgeed
+      if(e.target.classList.contains('box')){
+        let imgURL = box.style.backgroundImage; // darsan elementiinhee backgroundImage ru ni handaad eniin negbhuvisagchind hadgalsan
+        modalOpen(imgURL);
+      } 
+  });
+});
+
+function modalOpen(imgPath){
+  modalContainer.classList.add('open');
+  modalContainer.children[0].classList.add('openModal')
+  modalContainer.children[0].children[1].style.backgroundImage = imgPath;
+}
+
+//button.addEventListener('click', function(){
+  //modalContainer.classList.add('open');
+  //modalContainer.children[0].classList.add('openModal')
+  //modalContainer.children[0].children[1].style.backgroundImage = 'url(https://i.ytimg.com/vi/MPV2METPeJU/maxresdefault.jpg)'
+//});
+close.addEventListener('click', function(){
+  modalContainer.classList.remove('open');
+  modalContainer.children[0].classList.remove('openModal')
+});
+
+btnCancel.addEventListener('clcik', function(){
+  modalContainer.classList.remove('open');
+  modalContainer.children[0].classList.remove('openModal')
+});
+
+document.addEventListener('click', function(e){   // ene ni delgetsiin haanch darsan arilgaj boldog zaaval button or X der daralguigeer
+ if( e.target.classList.contains('modalContainer')){  //(e) tuhain element target ni handaj bga
+   modalContainer.classList.remove('open');
+   modalContainer.children[0].classList.remove('openModal');
+ };
+
+  if(e.target.classList.contains('delete')){
+    e.target.parentNode.remove();
+  }
+});
+
+    </script>
+</body>
+</html>

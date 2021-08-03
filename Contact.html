@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery.html</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+     *{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:century Gothic;
+    }
+    header{
+        background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(image-1/logo2.webp);
+        height: 1-0vh;
+        background-size: cover;
+        background-position: center;
+    }
+    ul{
+        float:right;
+        list-style: none;
+        margin-top: 25px;
+    }
+    ul li{
+        display:inline-block;
+    }
+    ul li a{
+        text-decoration: none;
+        color:black;
+        padding:5px 5px;
+        border:1px solid #fff;
+        transition: 0.6s ease;
+    }
+    ul li a:hover{
+        background-color:#fff;
+        color:#000;
+    }
+    ul li.active a{
+        background-color:#fff;
+        color:#000;
+    }
+    .logo img{
+        float:left;
+        width:150px;
+        height:auto;
+    }
+    .contact{
+        position: relative;
+        min-height: 100vh;
+        padding:50px 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-size: cover;
+    }
+    .contact .content{
+        max-width: 800px;
+        text-align: center;
+    }
+    .contact .content h2{
+        font-size: 56px;
+        font-weight: 500;
+        color:#fff;
+    }
+    .contact .content p{
+        font-weight: 500;
+        font-size: 20px;
+        color:rgb(255, 255, 255);
+    }
+    .container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+    }
+    .container .contactinfo{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+    .container .contactinfo .box{
+        position: relative;
+        padding: 20px 0;
+        display: flex;
+    }
+    .container .contactinfo .box .icon{
+        min-width: 50px;
+        height: 60px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        font-size: 22px;
+    }
+    .container .contactinfo .box .text{
+        display: flex;
+        margin-left: 20px;
+        font-size: 16px;
+        color:#fff;
+        flex-direction: column;
+        font-weight: 300;
+    }
+    .container .contactinfo .box .text h3{
+        font-weight: 500;
+        color:#00bbcd4;
+    }
+   .contactForm{
+       width:55%;
+       padding: 40px;
+       background: #fff;
+   }
+   .contactForm h2{
+       font-size: 30px;
+       color: #333;
+       font-weight: 500;
+   }
+   .contactForm .inputbox{
+       position: relative;
+       width: 100%;
+       margin-top: 10px;
+   }
+   .contactForm .inputbox input
+   {
+       width: 100%;
+       padding: 5px 0;
+       font-size: 16px;
+       margin: 10px 0;
+       border: none;
+       border-bottom: 2px solid #333;
+       outline: none;
+   }
+   
+    </style>
+</head>
+<body>
+    <header>
+        <div class="main">
+            <div class="logo">
+                <img src="image-1/logo.webp">
+                </div>>
+            <ul>
+                <li><a href="index.html" a href="#"style="color:red">Нүүр хуудас</a></li>
+            <li><a href="LifeStyle.html" style="color:greenyellow">Чөлөөт</a></li>
+            <li><a href="Gallery.html" style="color:chocolate">Зураг</a></li>
+            <li><a href="ToDo.html" style="color:cyan">Түдүү</a></li>
+            <li><a href="Piano.html" style="color:rgb(89, 0, 255)">Хөгжим</a></li>
+            <li><a href="Contact.html" style="color:darkorange">Холбоо барих</a></li>
+            </ul>
+            </div>
+                <section class="contact">
+                    <div class="content">
+                        <h2>Contact Us</h2>
+                        <p>
+                        </p>
+                        </div>
+                        <div class="container">
+                            <div class="contactinfo">
+                                <div class="box">
+                                    <div class=icon><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                                    <div class="text">
+                                        <h3>Address</h3>
+                                        <p>Монгол улс Улаанбаатар хот,<br>баянзүрх, Шангрилла,<br>040 тоот</p>
+                                    </div>
+                                </div>
+                                <div class="box">
+                                    <div class=icon><i class="fa fa-phone" aria-hidden="true"></i></div>
+                                    <div class="text">
+                                        <h3>Phone</h3>
+                                        <p>+976 98886719</p>
+                                    </div>
+                                </div>
+                                <div class="box">
+                                    <div class=icon><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+                                    <div class="text">
+                                        <h3>Майл хаяг</h3>
+                                        <p>Lkhagvamaa6719@gmail</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contactForm">
+                                <form>
+                                    <h2>Send message</h2>
+                                    <div class="inputbox">
+                                        <input id="Texxt" type="text" name=""required="required">
+                                        <span>Full name</span>
+                                    </div>
+                                    <div class="inputbox">
+                                        <input id="require" type="text" name=""required="required">
+                                        <span>Email</span>
+                                    </div>
+                                    <div class="inputbox">
+                                        <textarea required="required"></textarea>
+                                        <span id="messej">Type your messages...</span>
+                                    </div>
+                                    <div class="inputbox">
+                                       <input type="submit" name="" value="Send">
+                                        
+                                    </div>
+                                 </form>
+                                 <div class="logo">
+                                    <a href="#">
+                                        <img s>
+                                        </a>
+                                    </div>
+                            </div>
+                        </div>
+                </section>
+         </header>
+         <script>
+             const Texxt = document.querySelector("#Texxt")
+             const require = document.querySelector("#require")
+             const messej = document.querySelector("#messej")
+
+             Texxt.addEventListener("click", ()=>{
+                console.log(innerHTML==Texxt)
+             }
+         </script>
+</body>
+</html>
